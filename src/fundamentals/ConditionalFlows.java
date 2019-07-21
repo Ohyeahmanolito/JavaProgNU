@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author ITRO
  */
-public class ConditionalFlow {
+public class ConditionalFlows {
 
     public static void conditionaOne(String name) {
         if (name.length() == 4) {

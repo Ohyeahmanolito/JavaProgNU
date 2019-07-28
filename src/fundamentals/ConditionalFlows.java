@@ -13,13 +13,25 @@ import java.util.Scanner;
  */
 public class ConditionalFlows {
 
-    public static void conditionaOne(String name) {
+    /**
+     * Checks and display whether a pass input has length of 4.
+     *
+     * @param name the value that will be checked.
+     */
+    public static void isExactFour(String name) {
         if (name.length() == 4) {
             System.out.println("Your name '" + name + "' is exactly 4");
         }
+        System.out.println("Done checking...");
     }
 
-    public static void conditionalTwo(int numb1, int numb2) {
+    /**
+     * Display whose the greater value from the pass inputs.
+     *
+     * @param numb1 first number.
+     * @param numb2 second number.
+     */
+    public static void isGreater(int numb1, int numb2) {
         if (numb1 > numb2) {
             System.out.println("first is highest");
         } else {
@@ -28,7 +40,16 @@ public class ConditionalFlows {
         System.out.println("Done for the condition");
     }
 
-    public static int conditionalFour(int numb1, int numb2) {
+    /**
+     * return whose the greater value from the pass inputs. However, it will
+     * return the sum of the two numbers if both are equal.
+     *
+     * @param numb1 first number.
+     * @param numb2 second number.
+     *
+     * @return higher number or the sum of the two numbers.
+     */
+    public static int isGreaterAgain(int numb1, int numb2) {
         if (numb1 > numb2) {
             return numb1;
         } else if (numb1 < numb2) {
@@ -38,7 +59,13 @@ public class ConditionalFlows {
         }
     }
 
-    public static void conditionalThree(String val1, String val2, int numb1, int numb2) {
+    /**
+     * Display the status of the pass values based on conditions.
+     *
+     * @param val1 first input string.
+     * @param val2 second input string.
+     */
+    public static void displayStatus(String val1, String val2, int numb1, int numb2) {
 
         if (val1.equals(val2) && ((numb1 < 4) && (numb2 < 4))) {
             System.out.println("match");

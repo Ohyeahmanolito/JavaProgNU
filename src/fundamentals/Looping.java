@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printStar();
+        printStartWithParam(3);
     }
 
     /**
@@ -42,6 +42,22 @@ public class Looping {
             }
             System.out.println("");
         }
+    }
+
+    /**
+     * Display a star pattern using nested loop.
+     * 
+     * @param size the end of the loop
+     */
+    public static void printStartWithParam(int size) {
+
+        for (int row = 0; row <= size; row++) {
+            for (int col = 0; col <= row; col++) {
+                System.out.print("* ");
+            }
+            System.out.println("");
+        }
+
     }
 
 }

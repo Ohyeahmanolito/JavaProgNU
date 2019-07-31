@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printContNumber(3);
+        printTwoTimesDimension(3);
     }
 
     /**
@@ -103,6 +103,26 @@ public class Looping {
                 // continuously add the value
                 total++;
                 System.out.print(total + " ");
+            }
+
+            System.out.println("");
+        }
+    }
+
+    /**
+     * Display a rectangle/square pattern using nested loop.
+     *
+     * @param size the end of the loop
+     */
+    public static void printTwoTimesDimension(int size) {
+        int twoTimes = size * 2;
+
+        // outer loop
+        for (int row = 1; row <= twoTimes; row++) {
+
+            // loop for col
+            for (int col = 1; col <= twoTimes; col++) {
+                System.out.print("* ");
             }
 
             System.out.println("");

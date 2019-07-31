@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printStarOpposite(3);
+        printContNumber(3);
     }
 
     /**
@@ -83,7 +83,28 @@ public class Looping {
             for (int col = 0; col < row; col++) {
                 System.out.print("*");
             }
-            
+
+            System.out.println("");
+        }
+    }
+
+    /**
+     * Display a number pattern using nested loop.
+     *
+     * @param size the end of the loop
+     */
+    public static void printContNumber(int size) {
+        int total = 0;
+        // outer loop
+        for (int row = 1; row <= size; row++) {
+
+            // loop for col
+            for (int col = 1; col <= row; col++) {
+                // continuously add the value
+                total++;
+                System.out.print(total + " ");
+            }
+
             System.out.println("");
         }
     }

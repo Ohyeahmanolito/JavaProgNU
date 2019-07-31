@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printTwoTimesDimension(3);
+        printBorder(3);
     }
 
     /**
@@ -125,6 +125,44 @@ public class Looping {
                 System.out.print("* ");
             }
 
+            System.out.println("");
+        }
+    }
+
+    /**
+     * Display a rectangle/square border pattern using nested loop.
+     *
+     * @param size the end of the loop
+     */
+    public static void printBorder(int size) {
+        int twoTimes = size * 2;
+
+        // outer loop
+        for (int row = 1; row <= twoTimes; row++) {
+
+            // special case wherein the box will be filled.
+            if (twoTimes == 2) {
+                for (int col = 1; col <= twoTimes; col++) {
+                    System.out.print("* ");
+                }
+            } else {
+                // first and last row should be filled
+                if (row == 1 || row == twoTimes) {
+                    for (int col = 1; col <= twoTimes; col++) {
+                        System.out.print("* ");
+                    }
+                    // only the first column and last column should have a star
+                } else {
+                    for (int col = 1; col <= twoTimes; col++) {
+
+                        if (col == 1 || col == twoTimes) {
+                            System.out.print("* ");
+                        } else {
+                            System.out.print("_ ");
+                        }
+                    }
+                }
+            }
             System.out.println("");
         }
     }

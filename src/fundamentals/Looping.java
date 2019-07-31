@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printStarOpposite(2);
+        printStarOpposite(3);
     }
 
     /**
@@ -80,7 +80,7 @@ public class Looping {
             }
 
             // loop to display the star
-            for (int col = 0; col <= row; col++) {
+            for (int col = 0; col < row; col++) {
                 System.out.print("*");
             }
             

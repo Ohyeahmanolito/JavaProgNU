@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        pyramidUsingWhile(3);
+        printBoarderWithNumber(3);
     }
 
     /**
@@ -208,4 +208,23 @@ public class Looping {
         }
     }
 
+    public static void printBoarderWithNumber(int size) {
+        int totalSize = (size * 2) + 1;
+
+        for (int row = 1; row <= totalSize; row++) {
+
+            for (int col = 1; col <= totalSize; col++) {
+                if ((row == 1 && col == 1)
+                        || (row == totalSize && col == 1)
+                        || (row == 1 && col == totalSize)
+                        || (row == totalSize && col == totalSize)) {
+
+                    System.out.print(size);
+                } else {
+                    System.out.print("*");
+                }
+            }
+            System.out.println("");
+        }
+    }
 }

@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printBoarderWithNumber(3);
+        printBoarderWithNumber(2);
     }
 
     /**
@@ -220,8 +220,10 @@ public class Looping {
                         || (row == totalSize && col == totalSize)) {
 
                     System.out.print(size);
-                } else {
+                } else if (row == 1 || col == 1 || row == totalSize || col == totalSize) {
                     System.out.print("*");
+                } else {
+                    System.out.print(" ");
                 }
             }
             System.out.println("");

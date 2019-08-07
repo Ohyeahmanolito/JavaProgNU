@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printBorder(3);
+        inverseNumberPattern(3);
     }
 
     /**
@@ -165,6 +165,28 @@ public class Looping {
             }
             System.out.println("");
         }
+
+    }
+
+    /**
+     * Display a rectangle/square border pattern using nested loop.
+     *
+     * @param input the end of the loop that will be * 2
+     */
+    public static void inverseNumberPattern(int input) {
+        int total = input * 2;
+
+        for (int row = 1; row <= total; row++) {
+            int counter = row;
+            for (int col = 1; col <= row; col++) {
+                System.out.print(counter);
+                counter--;
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void crossPattern() {
     }
 
 }

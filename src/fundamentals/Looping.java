@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printBoarderWithNumber(2);
+        printBoarderWithNumbersPartTwo(2);
     }
 
     /**
@@ -222,6 +222,31 @@ public class Looping {
                     System.out.print(size);
                 } else if (row == 1 || col == 1 || row == totalSize || col == totalSize) {
                     System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void printBoarderWithNumbersPartTwo(int size) {
+        int totalSize = (size * 2) + 1;
+        int middle = (totalSize / 2) + 1;
+        for (int row = 1; row <= totalSize; row++) {
+
+            for (int col = 1; col <= totalSize; col++) {
+                if ((row == 1 && col == 1)
+                        || (row == totalSize && col == 1)
+                        || (row == 1 && col == totalSize)
+                        || (row == totalSize && col == totalSize)) {
+
+                    System.out.print("*");
+                } else if (row == 1 || col == 1 || row == totalSize || col == totalSize) {
+                    System.out.print(size);
+                } else if (row == middle && col == middle) {
+                    System.out.print("*");
+
                 } else {
                     System.out.print(" ");
                 }

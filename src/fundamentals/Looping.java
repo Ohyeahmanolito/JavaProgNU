@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        inverseNumberPattern(3);
+        pyramidUsingWhile(3);
     }
 
     /**
@@ -169,7 +169,7 @@ public class Looping {
     }
 
     /**
-     * Display a rectangle/square border pattern using nested loop.
+     * Display a number pattern using nested loop.
      *
      * @param input the end of the loop that will be * 2
      */
@@ -186,7 +186,26 @@ public class Looping {
         }
     }
 
-    public static void crossPattern() {
+    public static void crossPattern(int input) {
+    }
+
+    public static void pyramidUsingWhile(int size) {
+        int col = 0;
+        int row = 1;
+        while (row <= size) {
+            int space = 1;
+            while (space <= size - row) {
+                System.out.print("  ");
+                space++;
+            }
+            while (col != 2 * row - 1) {
+                System.out.print("* ");
+                col++;
+            }
+            row++;
+            col = 0;
+            System.out.println();
+        }
     }
 
 }

@@ -12,7 +12,7 @@ package fundamentals;
 public class Looping {
 
     public static void main(String[] args) {
-        printBoarderWithNumbersPartTwo(2);
+        printBorderWithLetter("acx", 5);
     }
 
     /**
@@ -140,29 +140,23 @@ public class Looping {
         // outer loop
         for (int row = 1; row <= twoTimes; row++) {
 
-            // special case wherein the box will be filled.
-            if (twoTimes == 2) {
+            // first and last row should be filled
+            if (row == 1 || row == twoTimes) {
                 for (int col = 1; col <= twoTimes; col++) {
                     System.out.print("* ");
                 }
+                // only the first column and last column should have a star
             } else {
-                // first and last row should be filled
-                if (row == 1 || row == twoTimes) {
-                    for (int col = 1; col <= twoTimes; col++) {
-                        System.out.print("* ");
-                    }
-                    // only the first column and last column should have a star
-                } else {
-                    for (int col = 1; col <= twoTimes; col++) {
+                for (int col = 1; col <= twoTimes; col++) {
 
-                        if (col == 1 || col == twoTimes) {
-                            System.out.print("* ");
-                        } else {
-                            System.out.print("_ ");
-                        }
+                    if (col == 1 || col == twoTimes) {
+                        System.out.print("* ");
+                    } else {
+                        System.out.print("_ ");
                     }
                 }
             }
+
             System.out.println("");
         }
 
@@ -252,6 +246,40 @@ public class Looping {
                 }
             }
             System.out.println("");
+        }
+    }
+
+    /**
+     * Display a rectangle/square border pattern using nested loop.
+     *
+     */
+    public static void printBorderWithLetter(String value, int index) {
+        int twoTimes = value.length() * 2;
+        if (value.length() < index) {
+            System.out.println("wrong output");
+        } else {
+            // outer loop
+            for (int row = 1; row <= twoTimes; row++) {
+
+                // first and last row should be filled
+                if (row == 1 || row == twoTimes) {
+                    for (int col = 1; col <= twoTimes; col++) {
+                        System.out.print(value.charAt(index) + "");
+                    }
+                    // only the first column and last column should have a star
+                } else {
+                    for (int col = 1; col <= twoTimes; col++) {
+
+                        if (col == 1 || col == twoTimes) {
+                            System.out.print(value.charAt(index) + "");
+                        } else {
+                            System.out.print(" ");
+                        }
+                    }
+                }
+
+                System.out.println("");
+            }
         }
     }
 }

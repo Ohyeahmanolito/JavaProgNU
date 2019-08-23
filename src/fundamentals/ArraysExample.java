@@ -16,8 +16,9 @@ public class ArraysExample {
     public static void main(String[] args) {
 //        String input = "Donkey";
 //        perChar(input);
- //       int[] arr = {1, 10, 3, 4, 64, 32};
- //       swappingRightToLeft(arr);
+        int[] arr = {1, 10, 3, 4, 64, 32};
+        swappingRightToLeft(arr);
+//        changeValue(arr, 1000);
     }
 
     public static void perCharV2(String param) {
@@ -87,6 +88,26 @@ public class ArraysExample {
 
         for (int counter = 0; counter < charArr.length; counter++) {
             System.out.println(charArr[counter] + " ");
+        }
+    }
+
+    public static void swappingRightToLeft(int[] arr) {
+
+        System.out.println("before swapped");
+        for (int temp : arr) {
+            System.out.print(temp + ", ");
+        }
+        for (int counter = 0; counter < (arr.length / 2); counter++) {
+            int end = arr.length - 1 - counter;
+
+            int temp = arr[counter];
+            arr[counter] = arr[end];
+            arr[end] = temp;
+        }
+        System.out.println("");
+        System.out.println("swapped");
+        for (int temp : arr) {
+            System.out.print(temp + ", ");
         }
     }
 

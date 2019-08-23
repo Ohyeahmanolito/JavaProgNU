@@ -9,7 +9,7 @@ package fundamentals;
  *
  * @author ITRO
  */
-public class Looping {
+public class LoopingExample {
 
     public static void main(String[] args) {
         printBorderWithLetter("acx", 5);

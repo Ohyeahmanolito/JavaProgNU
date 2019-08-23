@@ -14,11 +14,14 @@ import java.util.Scanner;
 public class ArrayExample {
 
     public static void main(String[] args) {
+        int[] arr = {1, 10, 3, 4, 64, 32};
 //        String input = "Donkey";
 //        perChar(input);
-        int[] arr = {1, 10, 3, 4, 64, 32};
-        swappingRightToLeft(arr);
-        changeValue(arr, 1000);
+
+//        swappingRightToLeft(arr);
+//        changeValue(arr, 1000);
+        int sum = totalOfArray(arr);
+        System.out.println("the sum: " + sum);
     }
 
     /**
@@ -188,4 +191,16 @@ public class ArrayExample {
         }
     }
 
+    public static int totalOfArray(int[] arr) {
+        // Initialized the value of sum to zero.
+        int sum = 0;
+
+        // Loop each value and add to sum.
+        for (int temp : arr) {
+            sum += temp;
+        }
+
+        // return the total of the array's value.
+        return sum;
+    }
 }

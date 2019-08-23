@@ -16,8 +16,8 @@ public class ArraysExample {
     public static void main(String[] args) {
 //        String input = "Donkey";
 //        perChar(input);
-        int[] arr = {1, 10, 3, 4, 64, 32};
-        swappingRightToLeft(arr);
+ //       int[] arr = {1, 10, 3, 4, 64, 32};
+ //       swappingRightToLeft(arr);
     }
 
     public static void perCharV2(String param) {

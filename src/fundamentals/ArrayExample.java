@@ -14,14 +14,7 @@ import java.util.Scanner;
 public class ArrayExample {
 
     public static void main(String[] args) {
-        int[] arr = {1, 10, 3, 4, 64, 32};
-//        String input = "Donkey";
-//        perChar(input);
-
-//        swappingRightToLeft(arr);
-//        changeValue(arr, 1000);
-        int sum = totalOfArray(arr);
-        System.out.println("the sum: " + sum);
+        displayNPattern(2);
     }
 
     /**
@@ -202,5 +195,28 @@ public class ArrayExample {
 
         // return the total of the array's value.
         return sum;
+    }
+
+    public static void displayNPattern(int number) {
+        int[][] arr = new int[4][4];
+
+        for (int row = 0; row < arr.length; row++) {
+            arr[row][0] = number;
+            arr[row][arr[0].length - 1] = number;
+        }
+        if (number % 2 == 0) {
+            arr[2][1] = number;
+            arr[1][2] = number;
+        } else {
+            arr[1][1] = number;
+            arr[2][2] = number;
+        }
+
+        for (int[] row : arr) {
+            for (int col : row) {
+                System.out.print(col + " ");
+            }
+            System.out.println("");
+        }
     }
 }

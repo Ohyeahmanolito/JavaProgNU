@@ -14,7 +14,8 @@ import java.util.Scanner;
 public class ArrayExample {
 
     public static void main(String[] args) {
-        displayNPattern(2);
+        int inputNumber = 4;
+        reverseArrInput(inputNumber);
     }
 
     /**
@@ -210,6 +211,27 @@ public class ArrayExample {
         } else {
             arr[1][1] = number;
             arr[2][2] = number;
+        }
+
+        for (int[] row : arr) {
+            for (int col : row) {
+                System.out.print(col + " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void reverseArrInput(int number) {
+        int[][] arr = new int[2][number];
+        Scanner input = new Scanner(System.in);
+
+        for (int counter = 0; counter < number; counter++) {
+            System.out.print("Input number: ");
+            arr[0][counter] = input.nextInt();
+        }
+
+        for (int counter = 0; counter < arr[0].length; counter++) {
+            arr[1][counter] = arr[0][arr[0].length - counter - 1];
         }
 
         for (int[] row : arr) {

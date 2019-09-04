@@ -5,6 +5,8 @@
  */
 package fundamentals;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,7 +17,8 @@ import java.util.Scanner;
 public class FileHandlingExceptionHandling {
 
     public static void main(String[] args) {
-        finallyBlock();
+        String filePath = "C:\\Users\\ITRO\\Desktop\\Sample input.txt";
+        readFile(filePath);
     }
 
     public static void basicExceptionHandling() {
@@ -56,4 +59,24 @@ public class FileHandlingExceptionHandling {
         }
     }
 
+    public static void readFile(String filePath) {
+        try {
+            FileReader fReader = new FileReader(filePath);
+            BufferedReader bReader = new BufferedReader(fReader);
+
+            String line = "";
+            while ((line = bReader.readLine()) != null) {
+                String[] perWord = line.split(",");
+
+                for (int count = 0; count < perWord.length; count++) {
+                    System.out.println(perWord[count]);
+                }
+            }
+            bReader.close();
+            fReader.close();
+
+        } catch (Exception e) {
+            System.out.println("file not found");
+        }
+    }
 }

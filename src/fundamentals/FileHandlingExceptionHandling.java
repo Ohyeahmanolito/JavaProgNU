@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -20,7 +21,7 @@ public class FileHandlingExceptionHandling {
 
     public static void main(String[] args) {
         String filePath = "C:\\Users\\ITRO\\Desktop\\number file.txt";
-        addReadFile(filePath);
+        countABO(filePath);
     }
 
     public static void basicExceptionHandling() {
@@ -132,5 +133,59 @@ public class FileHandlingExceptionHandling {
         } catch (Exception e) {
             System.out.println("file not found");
         }
+    }
+
+    public static void countABO(String filePath) {
+
+        FileWriter fWriter = null;
+        BufferedWriter bWriter = null;
+        try {
+            fWriter = new FileWriter(filePath, true);
+            bWriter = new BufferedWriter(fWriter);
+
+            Scanner input = new Scanner(System.in);
+
+            System.out.println("Enter input except \"hello \"");
+            String temp = input.nextLine();
+
+            // Storing values in arrayList
+            ArrayList<String> store = new ArrayList<String>();
+            while (!temp.equalsIgnoreCase("hello")) {
+                store.add(temp);
+                System.out.println("Enter input except \"hello \"");
+                temp = input.nextLine();
+            }
+
+            int totalA = 0;
+            int totalB = 0;
+            int totalO = 0;
+            // Storing values in file
+            for (int counter = 0; counter < store.size(); counter++) {
+                String word = store.get(counter);
+
+                // counting
+                for (int charac = 0; charac < word.length(); charac++) {
+                    if (word.charAt(charac) == 'a') {
+                        totalA++;
+                    } else if (word.charAt(charac) == 'b') {
+                        totalB++;
+                    } else if (word.charAt(charac) == 'o') {
+                        totalO++;
+                    }
+
+                }
+                bWriter.write(word);
+                bWriter.write("\n");
+            }
+            bWriter.close();
+            fWriter.close();
+            System.out.println("total of A: " + totalA);
+            System.out.println("total of B: " + totalB);
+            System.out.println("total O: " + totalO);
+        } catch (Exception e) {
+            System.out.println("file not found");
+            e.getStackTrace();
+        }
+
     }
 }
